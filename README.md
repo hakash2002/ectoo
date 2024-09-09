@@ -17,4 +17,4 @@ Do run the following to see few insights:
   mix app.stats
 ```
 
-### Look at musicdb_rmd - ER.png for Entity-relationship diagram
+### Look at "musicdb_rmd - ER.png" for Entity-relationship diagram
