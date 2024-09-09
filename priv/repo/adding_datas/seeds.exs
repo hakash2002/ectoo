@@ -5,11 +5,13 @@ alias MusicdbRmd.{
   Genre,
   Producer,
   City,
+  Song,
   ConcertsSongs,
   Venue,
   Concert,
   AlbumEmbeded,
-  ArtistProducer
+  ArtistProducer,
+  PublicOpinions
 }
 
 # Genres
@@ -872,12 +874,13 @@ songs = [
 
 producer = %{name: "Art Bakey"}
 
+album =
+  AlbumEmbeded.changeset(%AlbumEmbeded{}, %{
+    title: "Moanin'",
+    producer: producer,
+    songs: songs
+  })
 
-album = AlbumEmbeded.changeset(%AlbumEmbeded{}, %{
-  title: "Moanin'",
-  producer: producer,
-  songs: songs
-})
 Repo.insert!(album)
 
 k =
@@ -903,3 +906,42 @@ Repo.insert!(new,
   on_conflict: [set: [grammys_won: new.grammys_won]],
   conflict_target: [:name, :dob, :dod]
 )
+
+# Public Opinions
+
+artist = Repo.get(Artist, 1)
+producer = Repo.get(Producer, 1)
+concert = Repo.get(Concert, 1)
+song = Repo.get(Song, 1)
+album = Repo.get(Album, 1)
+
+PublicOpinions.changeset(%PublicOpinions{}, %{
+  comment: "The GOAT",
+  author: "haks",
+  artist: artist
+})
+|> Repo.insert!()
+
+PublicOpinions.changeset(%PublicOpinions{}, %{
+  comment: "Magician",
+  author: "someone",
+  producer: producer
+})
+|> Repo.insert!()
+
+PublicOpinions.changeset(%PublicOpinions{}, %{
+  comment: "Pleasing",
+  author: "someone",
+  album: album
+})
+|> Repo.insert!()
+
+PublicOpinions.changeset(%PublicOpinions{}, %{
+  comment: "120 DB!!",
+  author: "noone",
+  concert: concert
+})
+|> Repo.insert!()
+
+PublicOpinions.changeset(%PublicOpinions{}, %{comment: "Unique in its genre", author: "anyone", song: song})
+|> Repo.insert!()
