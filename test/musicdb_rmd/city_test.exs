@@ -1,5 +1,5 @@
 defmodule MusicdbRmd.CityTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias MusicdbRmd.{City, Repo}
   alias Ecto.Changeset
 

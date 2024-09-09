@@ -1,5 +1,5 @@
 defmodule MusicdbRmd.ConcertsongsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias MusicdbRmd.{ConcertsSongs, Repo, Concert, Song}
 
   setup do

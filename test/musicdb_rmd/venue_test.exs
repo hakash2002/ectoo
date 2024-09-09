@@ -1,5 +1,5 @@
 defmodule MusicdbRmd.VenueTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias MusicdbRmd.{Venue, Repo}
   alias Ecto.Changeset
 

@@ -1,5 +1,5 @@
 defmodule MusicdbRmd.GenreTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias MusicdbRmd.{Genre, Repo}
 
   setup do

@@ -1,5 +1,5 @@
 defmodule MusicdbRmd.PublicOpinionsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias MusicdbRmd.{PublicOpinions, Artist, Producer, Repo, Concert, Song, Album}
   alias Ecto.Changeset
 

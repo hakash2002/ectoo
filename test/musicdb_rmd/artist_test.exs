@@ -1,6 +1,5 @@
 defmodule MusicdbRmd.ArtistTest do
-  use ExUnit.Case
-  alias Hex.Repo
+  use ExUnit.Case, async: true
   alias Ecto.{Changeset, Adapters.SQL.Sandbox}
   alias MusicdbRmd.{Artist, Band, SoloArtist, ArtistProducer, Repo}
   import Ecto.Changeset
