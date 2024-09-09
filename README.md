@@ -1,6 +1,6 @@
-## Ecto project with reference to book "Programming Ecto - The Pragmatic programmers"
+# Ecto project with reference to book "Programming Ecto - The Pragmatic programmers"
 
-# Setup
+## Setup
 
 To setup dependencies: 
 ```
@@ -16,3 +16,5 @@ Do run the following to see few insights:
 ```
   mix app.stats
 ```
+
+### Look at musicdb_rmd - ER.png for Entity-relationship diagram
